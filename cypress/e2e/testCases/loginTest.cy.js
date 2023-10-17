@@ -6,9 +6,11 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 })
 
 describe('Login Test', ()=>{
-    it('Verify user can login with valid username and password - positive test', ()=>{
-        cy.visit('https://qa.fgntreasury.gov.ng/auth/login')
-       
+    it.only('Verify user can login with valid username and password - positive test', ()=>{
+        cy.visit(Cypress.env('url')+'/auth/login')
+        
+        //cy.visit('https://qa.fgntreasury.gov.ng/auth/login')
+        
         cy.fixture('example').then((data)=>{const ln = new login();
         ln.setUserName(data.username)
         ln.setPassword(data.password)
