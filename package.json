@@ -7,6 +7,16 @@
   "name": "tmsv2",
   "version": "1.0.0",
   "main": "index.js",
+  "script": {
+    "test": "node_modules\\.bin\\cypress run",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "firefoxTest": "npm run test -- --browser firefox",
+    "safariTest": "npm run test -- --browser safari",
+    "edgeTest": "npm run test -- --browser edge",
+    "openTest": "npm run headTest && npm run chromeTest && npm run firefoxTest && npm run safariTest && npm run edge"
+  
+  },
   "dependencies": {
     "aggregate-error": "^3.1.0",
     "ansi-colors": "^4.1.3",
